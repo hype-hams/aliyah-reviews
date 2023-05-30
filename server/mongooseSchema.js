@@ -7,7 +7,7 @@ const review = mongoose.Schema({
     unique: true
   },
   rating: NUMBER,
-  summary STRING,
+  summary: STRING,
   recommend: BOOLEAN,
   response: STRING,
   body: STRING,

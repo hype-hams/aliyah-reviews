@@ -39,15 +39,3 @@ CREATE TABLE IF NOT EXISTS review_photos (
 
 
 
-------------
-COPY reviews (id, product_id, rating, date, summary, body, recommend, reported, reviewer_name, reviewer_email, response, helpfulness)
-FROM '/aliyahindra/Desktop/reviews-data/reviews.csv' DELIMITER ',' CSV HEADER;
-
-COPY characterisitcs (id, product_id, name)
-FROM '/aliyahindra/Desktop/reviews-data/reviews.csv' DELIMITER ',' CSV HEADER;
-
-COPY characterisitcs_reviews (id, characteristic_id, review_id, value)
-FROM '/aliyahindra/Desktop/reviews-data/reviews.csv' DELIMITER ',' CSV HEADER;
-
-COPY review_photos (id, review_id, url)
-FROM '/aliyahindra/Desktop/reviews-data/reviews.csv' DELIMITER ',' CSV HEADER;

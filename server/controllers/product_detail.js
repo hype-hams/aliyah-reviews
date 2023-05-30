@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 require('dotenv').config();
 const axios = require('axios');
+// console.log(API_KEY)
 
 const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
 
