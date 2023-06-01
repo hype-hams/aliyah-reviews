@@ -30,7 +30,7 @@ const controllers = require('./controllers');
 
 //reviews:Eric
 router.get('/reviews', controllers.reviews.getReviews);
-// router.get('/reviews/meta', controllers.reviews.getProductBreakdown);
+router.get('/reviews/meta', controllers.reviews.getProductBreakdown);
 // router.post('/reviews', controllers.reviews.postReview);
 // router.put('/reviews/:review_id/helpful', controllers.reviews.putHelpful);
 // router.put('/reviews/:review_id/report', controllers.reviews.reportReview);

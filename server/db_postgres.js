@@ -9,10 +9,9 @@ const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   port: process.env.PORT,
-  // max: 5,
-  // connectionTimeoutMillis: 20000,
-  // idelTimeOutMillis: 20000,
-  // allowExitOnIdle: false,
+  max: 100,
+  idelTimeOutMillis: 1000,
+  allowExitOnIdle: true,
 });
 
 // (async () => {

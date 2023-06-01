@@ -11,23 +11,18 @@ module.exports = {
     LIMIT ${count}`;
     return pool.query(queryStr);
   },
+  getMetaDB: ({ product_id }) => {
+    // console.log(product_id)
+    const queryStr = `SELECT rating, recommend, name, value
+      FROM reviews
+      CROSS JOIN characteristics
+      CROSS JOIN characteristic_reviews
+      WHERE reviews.product_id = ${product_id}
+      AND characteristics.product_id = ${product_id}
+      AND characteristic_reviews.characteristic_id = characteristics.id`;
+    return pool.query(queryStr);
+  },
 };
-
-// module.exports = {
-//   async getMetaDB({ productId }, callback) {
-//     const queryStr = `SELECT rating, recommend, name, value FROM reviews
-//       CROSS JOIN characteristics
-//       CROSS JOIN characteristic_reviews
-//       WHERE reviews.product.id = ${productId} AND characteristic_reviews.id = characteristics.id`;
-//     await pool.query(queryStr, (err, result) => {
-//       if (err) {
-//         callback(err);
-//       } else {
-//         callback(null, result);
-//       }
-//     });
-//   },
-// };
 
 // DO THESE TO INCEMENT ID PROPERLY WITHOUT DUPS
 //SELECT setval('your_sequence_name', (SELECT MAX(id) FROM questions));

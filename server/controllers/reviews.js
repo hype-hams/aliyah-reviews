@@ -19,13 +19,15 @@ module.exports = {
       .then((data) => res.status(200).send(data))
       .catch((err) => res.status(404).send(err.message));
   },
-  // getProductBreakdown: (req, res) => {
-  //   const { productId } = req.query;
+  getProductBreakdown: (req, res) => {
+    const { product_id } = req.query;
+    // console.log(req.query)
+    // console.log(product_id)
 
-  //   models.getMetaDB({ productId })
-  //     .then((data) => res.status(200).send(data))
-  //     .catch((err) => res.status(404).sende(err.message));
-  // },
+    models.getMetaDB({ product_id })
+      .then((data) => res.status(200).send(data))
+      .catch((err) => res.status(404).send(err.message));
+  },
   // postReview: (req, res) => {
   //   const {
   //     productId,
